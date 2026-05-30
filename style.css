@@ -24,7 +24,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--bg-light);
+    background-image: url('Fondonormal.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-dark);
     line-height: 1.6;
 }
@@ -125,7 +129,9 @@ body {
 /* Menú Lateral */
 .sidebar {
     width: 280px;
-    background: var(--bg-white);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-right: 1px solid var(--border-color);
     padding: 2rem 1.5rem;
     position: sticky;
@@ -184,7 +190,9 @@ body {
 }
 
 .article {
-    background: var(--bg-white);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-lg);
     padding: 3rem;
     box-shadow: var(--shadow-sm);
@@ -271,7 +279,9 @@ body {
 }
 
 .featured-card {
-    background: var(--bg-light);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 1.5rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
