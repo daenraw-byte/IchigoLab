@@ -49,6 +49,31 @@ body {
     letter-spacing: -0.5px;
 }
 
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.nav-button {
+    background: var(--bg-white);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-button:hover {
+    background: var(--bg-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
 .search-container {
     display: flex;
     align-items: center;
