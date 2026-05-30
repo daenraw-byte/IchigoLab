@@ -123,6 +123,14 @@ body {
     color: var(--primary-color);
 }
 
+.article-header .decoration {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-top: -5px;
+    line-height: 1;
+}
+
 .search-container {
     display: flex;
     align-items: center;
