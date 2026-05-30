@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundos - IchigoLab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="logo">
+            <h1>IchigoLab</h1>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button">Inicio</button>
+            <div class="dropdown">
+                <button class="nav-button dropdown-toggle">mundos</button>
+                <div class="dropdown-content">
+                    <a href="mundos.html" class="dropdown-item">Ver todos los mundos</a>
+                    <a href="#" class="dropdown-item">Harry Potter</a>
+                    <a href="#" class="dropdown-item">Alien Stage</a>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar en la wiki...">
+            <button class="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="user-menu">
+            <span class="user-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Menú Lateral -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" class="active">Mundos</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li><a href="#">Recientes</a></li>
+                </ul>
+                
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="#">Tecnología</a></li>
+                    <li><a href="#">Ciencia</a></li>
+                    <li><a href="#">Arte</a></li>
+                    <li><a href="#">Historia</a></li>
+                    <li><a href="#">Geografía</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Área Central de Contenido -->
+        <main class="content-area">
+            <article class="article">
+                <div class="article-header">
+                    <h1>Mundos</h1>
+                </div>
+                
+                <div class="article-content">
+                    <p class="lead">Explora los diferentes mundos disponibles en IchigoLab.</p>
+                    
+                    <div class="worlds-grid">
+                        <div class="world-card">
+                            <div class="world-image">
+                                <div class="world-gradient"></div>
+                                <div class="world-placeholder">
+                                    <span>Harry Potter</span>
+                                </div>
+                            </div>
+                            <h3>Harry Potter</h3>
+                        </div>
+                        
+                        <div class="world-card">
+                            <div class="world-image">
+                                <div class="world-gradient"></div>
+                                <div class="world-placeholder">
+                                    <span>Alien Stage</span>
+                                </div>
+                            </div>
+                            <h3>Alien Stage</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
