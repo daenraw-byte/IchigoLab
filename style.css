@@ -533,53 +533,108 @@ body {
     display: block;
 }
 
-.name-box {
+.info-box {
     background: white;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     text-align: center;
-    margin-bottom: 0;
 }
 
 .name-top {
     font-weight: 600;
     font-size: 0.9rem;
     color: var(--text-dark);
-    padding-bottom: 0.25rem;
+    padding: 0.5rem 0;
 }
 
 .name-divider {
     height: 1px;
     background: #e0e0e0;
-    margin: 0.25rem 0;
+    margin: 0;
 }
 
 .name-bottom {
     font-weight: 500;
     font-size: 0.85rem;
     color: var(--text-dark);
-    padding-top: 0.25rem;
     background: #e0e0e0;
-    margin: -0.5rem -1rem -0.5rem -1rem;
     padding: 0.5rem 1rem;
-    border-bottom-left-radius: var(--radius-md);
-    border-bottom-right-radius: var(--radius-md);
+    margin: 0 -1rem;
+}
+
+.archie-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    display: block;
+    margin: 0 -1rem;
 }
 
 .birth-info {
-    background: white;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    margin-top: 0.5rem;
+    padding: 0.5rem 0;
     font-size: 0.9rem;
     color: var(--text-dark);
 }
 
 .birth-info strong {
     font-weight: 600;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Estilos para pestañas */
+.tabs-container {
+    margin: 2rem 0 1rem 0;
+}
+
+.tabs-line {
+    height: 2px;
+    background: white;
+    margin-bottom: 0;
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+}
+
+.tab {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-top-left-radius: var(--radius-md);
+    border-top-right-radius: var(--radius-md);
+    border-bottom: 2px solid white;
+    position: relative;
+    top: -2px;
+}
+
+.tab:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.tab.active {
+    background: white;
+    font-weight: 600;
+    border-bottom: 2px solid white;
 }
 
 /* Estilos para la lista de personajes */
