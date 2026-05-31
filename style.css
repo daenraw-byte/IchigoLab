@@ -497,6 +497,26 @@ body {
     margin: 0;
 }
 
+/* Estilos específicos para página de Archie */
+.page-archie {
+    --primary-color: #808000;
+    --secondary-color: #556B2F;
+    --accent-color: #9ACD32;
+    background-image: url('Archiefondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.page-archie .nav-button {
+    background: #F0FFF0;
+}
+
+.page-archie .nav-button:hover {
+    background: #E0FFE0;
+}
+
 /* Estilos para la lista de personajes */
 .characters-list {
     display: flex;
