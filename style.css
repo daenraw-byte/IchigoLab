@@ -521,7 +521,7 @@ body {
 .profile-photo {
     float: right;
     margin: 0 0 1.5rem 1.5rem;
-    width: auto;
+    max-width: 300px;
 }
 
 .archie-photo {
