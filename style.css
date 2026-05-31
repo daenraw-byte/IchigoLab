@@ -521,7 +521,7 @@ body {
 .profile-photo {
     float: right;
     margin: 0 0 1.5rem 1.5rem;
-    max-width: 400px;
+    width: auto;
 }
 
 .archie-photo {
@@ -635,7 +635,6 @@ body {
     height: 2px;
     background: white;
     margin-top: 0;
-    margin-right: 300px;
 }
 
 /* Estilos para la lista de personajes */
