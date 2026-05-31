@@ -78,6 +78,8 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav-button:hover {
@@ -134,7 +136,7 @@ body {
 .header-decoration {
     display: flex;
     justify-content: center;
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
 }
 
 .decoration-image {
