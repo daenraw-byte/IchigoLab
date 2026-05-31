@@ -567,6 +567,21 @@ body {
     border-bottom-right-radius: var(--radius-md);
 }
 
+.birth-info {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.birth-info strong {
+    font-weight: 600;
+}
+
 /* Estilos para la lista de personajes */
 .characters-list {
     display: flex;
