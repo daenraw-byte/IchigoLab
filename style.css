@@ -522,7 +522,6 @@ body {
     float: right;
     margin: 0 0 1.5rem 1.5rem;
     max-width: 300px;
-    position: relative;
 }
 
 .archie-photo {
@@ -531,13 +530,10 @@ body {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     border: 3px solid rgba(255, 255, 255, 0.3);
+    display: block;
 }
 
 .name-box-white {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     background: white;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-md);
@@ -545,14 +541,11 @@ body {
     font-size: 0.9rem;
     color: var(--text-dark);
     box-shadow: var(--shadow-md);
-    white-space: nowrap;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 .name-box-gray {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
     background: #e0e0e0;
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-md);
@@ -560,7 +553,8 @@ body {
     font-size: 0.85rem;
     color: var(--text-dark);
     box-shadow: var(--shadow-sm);
-    white-space: nowrap;
+    text-align: center;
+    margin-top: 0.25rem;
 }
 
 /* Estilos para la lista de personajes */
