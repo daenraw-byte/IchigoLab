@@ -8,6 +8,9 @@
     <link rel="icon" href="Ichigoicon.png" type="image/png">
     <script src="script.js"></script>
     <style>
+        /* Import Spotify's Circular font for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Circular+Spotify+Text&display=swap');
+
         .main-container {
             display: flex;
             position: relative;
@@ -22,42 +25,19 @@
             flex-grow: 1; /* Allow content area to grow */
         }
         .music-player-container {
-            position: absolute; /* Position it absolutely within the main-container */
-            right: 10px; /* Align to the right */
-            top: 100px; /* Adjust vertical position */
-            width: 300px; /* Adjust width as needed */
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-            padding: 15px;
-            border-radius: 10px; /* More rounded corners */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Softer, more modern shadow */
-            backdrop-filter: blur(5px); /* Frosted glass effect */
-            z-index: 10;
-        }
-        .music-player-container h3 {
-            margin-top: 0;
-            color: #333;
-            text-align: center;
-            font-size: 1.2em; /* Slightly larger heading */
-            margin-bottom: 10px;
-        }
-        .music-player-container .player-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000; /* Black background for the iframe */
-            border-radius: 5px;
-        }
-        .music-player-container .player-wrapper iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            right: 10px;
+            top: 100px; /* Adjust vertical position */
+            width: 300px; /* Spotify player width */
+            background-color: #282828; /* Dark background like Spotify */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            overflow: hidden; /* Ensures content stays within rounded corners */
+            display: flex;
+            flex-direction: column;
+            font-family: 'Circular Spotify Text', sans-serif; /* Use Spotify font */
         }
-
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .main-container {
@@ -72,7 +52,24 @@
                 position: static; /* Stack it normally on smaller screens */
                 width: 100%;
                 margin-top: 20px;
+                right: auto;
+                top: auto;
             }
+        }
+
+        /* Styling for the Spotify embed itself */
+        .music-player-container iframe[data-testid="embed-iframe"] {
+            border: none !important; /* Remove default border if any */
+            border-radius: 12px !important; /* Ensure border radius matches */
+            box-shadow: none !important; /* Remove shadow if player adds one */
+            display: block; /* Ensure it behaves like a block element */
+        }
+        
+        /* Adjusting the container to fit the iframe perfectly */
+        .music-player-container {
+            padding: 0; /* Remove padding as iframe handles its own spacing */
+            background-color: transparent; /* Background handled by iframe */
+            box-shadow: none; /* Shadow handled by iframe */
         }
     </style>
 </head>
@@ -191,12 +188,9 @@
             </article>
         </main>
 
-        <!-- Music Player -->
+        <!-- Spotify Music Player -->
         <div class="music-player-container">
-            <h3>Playlist de Archie</h3>
-            <div class="player-wrapper">
-                <iframe src="https://www.youtube.com/embed/videoseries?list=PLlozDvY-AFPEnUqVcb7-3LqWqQSMUPxno&autoplay=1&mute=1&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3phDHTFwuwxSP69gD3z69H?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
     </div>
 </body>
