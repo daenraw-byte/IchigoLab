@@ -11,38 +11,55 @@
         .main-container {
             display: flex;
             position: relative;
-            padding-right: 320px; /* Space for the music player */
+            padding-right: 320px; /* Make space for the music player */
         }
         .sidebar {
-            flex-shrink: 0;
-            width: 250px;
-            margin-right: 20px;
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            width: 250px; /* Adjust sidebar width as needed */
+            margin-right: 20px; /* Space between sidebar and content */
         }
         .content-area {
-            flex-grow: 1;
+            flex-grow: 1; /* Allow content area to grow */
         }
         .music-player-container {
-            position: absolute;
-            right: 10px;
-            top: 100px;
-            width: 300px;
-            background-color: #282828; /* Dark background like Spotify */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            overflow: hidden; /* Ensures content stays within rounded corners */
-            display: flex;
-            flex-direction: column;
-            font-family: 'Circular Spotify Text', sans-serif; /* Modern font */
+            position: absolute; /* Position it absolutely within the main-container */
+            right: 10px; /* Align to the right */
+            top: 100px; /* Adjust vertical position */
+            width: 300px; /* Adjust width as needed */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            padding: 15px;
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Softer, more modern shadow */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            z-index: 10;
         }
-        /* Basic fallback font if Spotify's isn't available */
+        .music-player-container h3 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+            font-size: 1.2em; /* Slightly larger heading */
+            margin-bottom: 10px;
+        }
+        .music-player-container .player-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000; /* Black background for the iframe */
+            border-radius: 5px;
+        }
+        .music-player-container .player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .music-player-container {
-                position: static; /* Stack it normally on smaller screens */
-                width: 100%;
-                margin-top: 20px;
-                right: auto;
-                top: auto;
-            }
             .main-container {
                 flex-direction: column;
                 padding-right: 0;
@@ -51,99 +68,11 @@
                 margin-right: 0;
                 margin-bottom: 20px;
             }
-        }
-
-        .music-player-container .player-header {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background-color: #282828; /* Match container background */
-        }
-        .music-player-container .player-header .playlist-cover {
-            width: 50px;
-            height: 50px;
-            border-radius: 4px;
-            margin-right: 15px;
-            object-fit: cover; /* Ensure image covers the area */
-        }
-        .music-player-container .player-header .playlist-info h2 {
-            margin: 0;
-            color: #fff;
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-        .music-player-container .player-header .playlist-info .artist {
-            color: #b3b3b3; /* Lighter grey for artist */
-            font-size: 0.9em;
-            margin-top: 4px;
-        }
-        .music-player-container .player-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 15px;
-            background-color: #1db954; /* Spotify green for accent */
-            border-radius: 0 0 10px 10px; /* Rounded bottom corners */
-        }
-        .music-player-container .player-controls .control-button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5em;
-            margin: 0 10px;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.2s ease-in-out;
-        }
-        .music-player-container .player-controls .control-button:hover {
-            transform: scale(1.1);
-        }
-        .music-player-container .player-controls .play-pause-button {
-            font-size: 2.5em; /* Larger play/pause button */
-            color: #fff;
-        }
-        .music-player-container .track-list {
-            list-style: none;
-            padding: 15px;
-            margin: 0;
-            background-color: #181818; /* Darker background for track list */
-            flex-grow: 1; /* Allow track list to fill available space */
-            overflow-y: auto; /* Enable scrolling if list is long */
-            max-height: 300px; /* Limit height and enable scroll */
-        }
-        .music-player-container .track-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #333; /* Separator for tracks */
-            color: #b3b3b3;
-            font-size: 0.9em;
-        }
-        .music-player-container .track-list li:last-child {
-            border-bottom: none;
-        }
-        .music-player-container .track-list .track-info {
-            display: flex;
-            align-items: center;
-        }
-        .music-player-container .track-list .track-info .track-number {
-            color: #717171;
-            margin-right: 15px;
-            min-width: 20px; /* Ensure number alignment */
-            text-align: right;
-        }
-        .music-player-container .track-list .track-info .track-details .track-title {
-            color: #fff;
-            font-weight: normal;
-        }
-        .music-player-container .track-list .track-info .track-details .track-artist {
-            color: #b3b3b3;
-            font-size: 0.8em;
-        }
-        .music-player-container .track-list .track-duration {
-            color: #717171;
-            font-size: 0.8em;
+            .music-player-container {
+                position: static; /* Stack it normally on smaller screens */
+                width: 100%;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -183,7 +112,7 @@
         </div>
     </header>
 
-    <div class="main-container" style="position: relative;">
+    <div class="main-container" style="position: relative;"> <!-- Added relative positioning -->
         <!-- Menú Lateral -->
         <aside class="sidebar">
             <nav class="sidebar-nav">
@@ -262,70 +191,12 @@
             </article>
         </main>
 
-        <!-- Modern Music Player -->
+        <!-- Music Player -->
         <div class="music-player-container">
-            <div class="player-header">
-                <img src="https://via.placeholder.com/50/282828/ffffff?text=A" alt="Playlist Cover" class="playlist-cover"> <!-- Placeholder for your playlist image -->
-                <div class="playlist-info">
-                    <h2>Archie.</h2>
-                    <div class="artist">chrloRianna</div>
-                </div>
+            <h3>Playlist de Archie</h3>
+            <div class="player-wrapper">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLlozDvY-AFPEnUqVcb7-3LqWqQSMUPxno&autoplay=1&mute=1&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-            <div class="player-controls">
-                <!-- SVG icons for playback controls -->
-                <button class="control-button prev-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 19 6 12 11 5"></polygon><polygon points="17 19 12 12 17 5"></polygon></svg>
-                </button>
-                <button class="control-button play-pause-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21"></polygon></svg>
-                </button>
-                <button class="control-button next-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 5 11 12 6 19"></polygon><polygon points="13 5 18 12 13 19"></polygon></svg>
-                </button>
-            </div>
-            <ul class="track-list">
-                <li>
-                    <div class="track-info">
-                        <div class="track-number">Muestra</div>
-                        <div class="track-details">
-                            <div class="track-title">N/A</div>
-                            <div class="track-artist">N/A</div>
-                        </div>
-                    </div>
-                    <div class="track-duration">--:--</div>
-                </li>
-                <li>
-                    <div class="track-info">
-                        <div class="track-number">3</div>
-                        <div class="track-details">
-                            <div class="track-title">Your Favorite Toy</div>
-                            <div class="track-artist">Foo Fighters</div>
-                        </div>
-                    </div>
-                    <div class="track-duration">2:56</div>
-                </li>
-                <li>
-                    <div class="track-info">
-                        <div class="track-number">4</div>
-                        <div class="track-details">
-                            <div class="track-title">Need</div>
-                            <div class="track-artist">White Reaper</div>
-                        </div>
-                    </div>
-                    <div class="track-duration">2:57</div>
-                </li>
-                <li>
-                    <div class="track-info">
-                        <div class="track-number">5</div>
-                        <div class="track-details">
-                            <div class="track-title">Sick Of You</div>
-                            <div class="track-artist">DNMO, Sub Urban</div>
-                        </div>
-                    </div>
-                    <div class="track-duration">2:45</div>
-                </li>
-                <!-- Add more tracks as needed -->
-            </ul>
         </div>
     </div>
 </body>
