@@ -71,42 +71,6 @@
             background-color: transparent; /* Background handled by iframe */
             box-shadow: none; /* Shadow handled by iframe */
         }
-
-        /* Tab styling */
-        .tabs-container {
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center; /* Center the tabs */
-            margin-bottom: 5px;
-        }
-        .tab {
-            background-color: transparent;
-            border: none;
-            color: #a0a0a0; /* Lighter grey for inactive tabs */
-            padding: 8px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 500;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-            position: relative;
-            text-decoration: none; /* Ensure no underline for tabs */
-        }
-        .tab.active {
-            color: #ffffff; /* White for active tab */
-            border-bottom: 2px solid #1db954; /* Spotify green underline */
-        }
-        .tab:not(.active):hover {
-            color: #ffffff; /* White on hover for inactive tabs */
-        }
-        .tabs-line { /* This might be the line under the tabs, adjust if needed */
-            height: 1px;
-            background-color: #333; /* Darker line */
-            width: 100%;
-        }
     </style>
 </head>
 <body class="page-archie">
@@ -182,7 +146,6 @@
                             <button class="tab active">Perfil</button>
                             <button class="tab">Historia</button>
                             <button class="tab">Galería</button>
-                            <button class="tab">Conexiones</button> <!-- Correctly added tab -->
                         </div>
                         <div class="tabs-line"></div>
                     </div>
